@@ -12,7 +12,8 @@ public class Player : MonoBehaviour
     [SerializeField] LayerMask groundMask;
 
     [SerializeField] Animator animator;
-
+    [SerializeField] GameObject GamerOverPanel;
+    [SerializeField] GameObject GameOverTransp;
 
 
     private void Update()
@@ -20,13 +21,13 @@ public class Player : MonoBehaviour
         CheckGround();
         UpdateGravity();
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             Jump();
             jumping = true;
             Pulando(true);
         }
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.UpArrow))
         {
             jumping = false;
             Pulando(false);
@@ -84,6 +85,10 @@ public class Player : MonoBehaviour
     void GameOver()
     {
         Time.timeScale = 0;
+      //  if (Collider.CompareTag("Obstaculo"))
+      //  {
+       //    GamerOverPanel.SetActive(true);
+       // }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -91,6 +96,8 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Obstaculo"))
         {
             GameOver();
+            GamerOverPanel.SetActive(true);
+            GameOverTransp.SetActive(true);
         }
     }
 
