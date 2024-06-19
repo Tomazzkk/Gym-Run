@@ -35,11 +35,17 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
            Agachado(true);
+            Abaixado();
         }
         if (Input.GetKeyUp(KeyCode.DownArrow))
         {
             Agachado(false) ;
         }
+    }
+
+    private void Abaixado()
+    {
+        rigidbody2d.velocity = new Vector2(2,0);
     }
 
     private void Jump()
