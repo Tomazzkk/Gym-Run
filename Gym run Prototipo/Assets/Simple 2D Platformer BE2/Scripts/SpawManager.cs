@@ -27,9 +27,15 @@ public class SpawnManager : MonoBehaviour
             {
                 Instantiate(obstacle[1], new Vector2(13, -1), Quaternion.identity);
             } 
-            else if (ObstacleType > 40)
+            else if (ObstacleType > 60)
             {
                 Instantiate(obstacle[0], new Vector2(GameManager.instance.ScreenBounds.x, -4), Quaternion.identity);
+            }
+
+            else if(ObstacleType < 17)
+
+            {
+                Instantiate(obstacle[2], new Vector2(14, -3), Quaternion.identity);
             }
 
             if (GameManager.instance.Speed < 10)
