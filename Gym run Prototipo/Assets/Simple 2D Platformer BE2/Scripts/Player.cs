@@ -99,9 +99,9 @@ public class Player : MonoBehaviour
 
     private void Agachado(bool agachado)
     {
-        if (agachado = true) 
+        if (agachado == true) 
         {
-            GetComponent<BoxCollider2D>().size = new Vector2(0.60f, 0.72f);
+            GetComponent<BoxCollider2D>().size = new Vector2(0.60f, 0.65f);
         }
 
         else
