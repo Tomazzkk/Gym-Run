@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
            Agachado(true);
+            
         }
         if (Input.GetKeyUp(KeyCode.DownArrow))
         {
@@ -43,6 +44,7 @@ public class Player : MonoBehaviour
         }
     }
 
+ 
     private void Jump()
     {
         if (onGround)
@@ -104,6 +106,15 @@ public class Player : MonoBehaviour
 
     private void Agachado(bool agachado)
     {
+        if (agachado == true) 
+        {
+            GetComponent<BoxCollider2D>().size = new Vector2(0.60f, 0.65f);
+        }
+
+        else
+        {
+            GetComponent<BoxCollider2D>().size = new Vector2(0.60f, 0.86f);
+        }
         animator.SetBool("Agachado", agachado);
     }
 
