@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UiManager : MonoBehaviour
 {
@@ -15,4 +16,13 @@ public class UiManager : MonoBehaviour
             GameOverTransp.SetActive(true);
         }
     }
+
+    public void Reload()
+    {
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene("SampleScene");
+    }
+
+
 }
+   
