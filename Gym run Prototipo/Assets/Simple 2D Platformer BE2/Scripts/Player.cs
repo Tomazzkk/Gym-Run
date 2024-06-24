@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Player : MonoBehaviour
 {
@@ -14,6 +16,8 @@ public class Player : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] GameObject GamerOverPanel;
     [SerializeField] GameObject GameOverTransp;
+    int scoreText;
+    [SerializeField] TextMeshProUGUI textMeshProUGUI;
 
 
     private void Update()
@@ -87,10 +91,7 @@ public class Player : MonoBehaviour
     void GameOver()
     {
         Time.timeScale = 0;
-      //  if (Collider.CompareTag("Obstaculo"))
-      //  {
-       //    GamerOverPanel.SetActive(true);
-       // }
+      
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -100,6 +101,11 @@ public class Player : MonoBehaviour
             GameOver();
             GamerOverPanel.SetActive(true);
             GameOverTransp.SetActive(true);
+        }
+        if (collision.gameObject.CompareTag("maca"))
+        {
+            scoreText += 1;
+            textMeshProUGUI.text = scoreText.ToString();
         }
     }
 
@@ -122,4 +128,7 @@ public class Player : MonoBehaviour
     {
         animator.SetBool("Pulando", pulando);
     }
+
+
+  
 }   
