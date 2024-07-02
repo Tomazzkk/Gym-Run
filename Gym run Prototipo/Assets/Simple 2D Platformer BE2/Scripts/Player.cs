@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    bool jumping, onGround, doubleJump;
+    bool jumping, onGround, doubleJump, imune;
 
     float lowJumpMultiplier = 1.5f, fallMultiplier = 2.5f;
     [SerializeField] Rigidbody2D rigidbody2d;
@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject GameOverTransp;
     int scoreText;
     [SerializeField] TextMeshProUGUI textMeshProUGUI;
+    float Tempo;
 
 
     private void Update()
@@ -48,7 +49,22 @@ public class Player : MonoBehaviour
         {
             Agachado(false) ;
         }
-    }
+
+        if (imune == true)
+
+        { Tempo += Time.deltaTime; 
+            if(Tempo >= 5)
+            { imune = false;
+                Tempo = 0;
+            }
+              
+        }
+
+
+        
+        
+        }
+       
 
  
     private void Jump()
@@ -90,12 +106,14 @@ public class Player : MonoBehaviour
     void GameOver()
     {
         Time.timeScale = 0;
-      
+        GamerOverPanel.SetActive(true);
+        GameOverTransp.SetActive(true);
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Obstaculo"))
+        if (collision.gameObject.CompareTag("Obstaculo") && imune == false)
         {
             GameOver();
             GamerOverPanel.SetActive(true);
@@ -105,12 +123,19 @@ public class Player : MonoBehaviour
         {
             scoreText += 1;
             textMeshProUGUI.text = scoreText.ToString();
-           GameObject.Find("Image").GetComponent<Image>().fillAmount += 0.03f;
+           GameObject.Find("Image").GetComponent<Image>().fillAmount += 0.02f;
+            if (GameObject.Find("Image").GetComponent<Image>().fillAmount >= 0.04f )
+            {
+                imune = true;
+            }
+            Destroy(collision.gameObject);
+
         }
         if(collision.gameObject.CompareTag("Obstaculo2"))
         {
-            GameObject.Find("Image").GetComponent<Image>().fillAmount -= 0.3f;
+            GameObject.Find("Image").GetComponent<Image>().fillAmount -= 0.02f;
             ZeraBarra();
+           GameOver();
         }
 
            
@@ -121,8 +146,7 @@ public class Player : MonoBehaviour
         if (GameObject.Find("Image").GetComponent<Image>().fillAmount == 0.0f)
         {
             GameOver();
-            GamerOverPanel.SetActive(true);
-            GameOverTransp.SetActive(true);
+            
         }
     }
 

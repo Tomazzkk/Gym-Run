@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Obstaculo
   - maca
+  - Obstaculo2
   layers:
   - Default
   - TransparentFX

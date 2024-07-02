@@ -18,11 +18,5 @@ public class Obstacle : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("maca") == true) ;
-        {
-            Destroy(gameObject);
-        }
-    }
+
 }
