@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
@@ -7,7 +8,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    bool jumping, onGround, doubleJump;
+    bool jumping, onGround, doubleJump, imune;
 
     float lowJumpMultiplier = 1.5f, fallMultiplier = 2.5f;
     [SerializeField] Rigidbody2D rigidbody2d;
@@ -19,11 +20,12 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject GameOverTransp;
     int scoreText;
     [SerializeField] TextMeshProUGUI textMeshProUGUI;
+    float Tempo;
 
 
     private void Update()
     {
-        CheckGround();
+        //CheckGround();
         UpdateGravity();
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -47,7 +49,22 @@ public class Player : MonoBehaviour
         {
             Agachado(false) ;
         }
-    }
+
+        if (imune == true)
+
+        { Tempo += Time.deltaTime; 
+            if(Tempo >= 5)
+            { imune = false;
+                Tempo = 0;
+            }
+              
+        }
+
+
+        
+        
+        }
+       
 
  
     private void Jump()
@@ -56,13 +73,10 @@ public class Player : MonoBehaviour
         {
             rigidbody2d.velocity = new Vector2(0, 8);
         }
-        else if (doubleJump)
-        {
-            rigidbody2d.velocity = new Vector2(0, 8);
-            doubleJump = false;
-        }
 
     }
+
+
 
     private void CheckGround()
     {
@@ -72,7 +86,7 @@ public class Player : MonoBehaviour
             doubleJump = true;
         }
     }
-
+    
     private void UpdateGravity()
     {
         if (rigidbody2d.velocity.y > 0 && !jumping)
@@ -92,12 +106,14 @@ public class Player : MonoBehaviour
     void GameOver()
     {
         Time.timeScale = 0;
-      
+        GamerOverPanel.SetActive(true);
+        GameOverTransp.SetActive(true);
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Obstaculo"))
+        if (collision.gameObject.CompareTag("Obstaculo") && imune == false)
         {
             GameOver();
             GamerOverPanel.SetActive(true);
@@ -107,7 +123,46 @@ public class Player : MonoBehaviour
         {
             scoreText += 1;
             textMeshProUGUI.text = scoreText.ToString();
-           GameObject.Find("Image").GetComponent<Image>().fillAmount += 0.1f;
+           GameObject.Find("Image").GetComponent<Image>().fillAmount += 0.02f;
+            if (GameObject.Find("Image").GetComponent<Image>().fillAmount >= 0.04f )
+            {
+                imune = true;
+            }
+            Destroy(collision.gameObject);
+
+        }
+        if(collision.gameObject.CompareTag("Obstaculo2"))
+        {
+            GameObject.Find("Image").GetComponent<Image>().fillAmount -= 0.02f;
+            ZeraBarra();
+           GameOver();
+        }
+
+           
+  }
+
+    private void ZeraBarra()
+    {
+        if (GameObject.Find("Image").GetComponent<Image>().fillAmount == 0.0f)
+        {
+            GameOver();
+            
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            onGround = true;
+        }
+    }
+
+    public void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            onGround = false;
         }
     }
 

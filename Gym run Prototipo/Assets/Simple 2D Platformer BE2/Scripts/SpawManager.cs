@@ -54,11 +54,5 @@ public class SpawnManager : MonoBehaviour
             clock -= Time.deltaTime;
         }
     }
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player") == true) ;
-        {
-            Destroy(gameObject);
-        }
-    }
+    
 }
