@@ -23,6 +23,9 @@ public class UiManager : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
     }
 
-
+    public void Menu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
 }
    
