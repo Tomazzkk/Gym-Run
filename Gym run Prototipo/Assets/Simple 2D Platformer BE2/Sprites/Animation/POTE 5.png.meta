@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9d2ec4f3183566c4d9fa5e9589167fc4
+guid: 6a5adbb14f19ac04ba1246e6411465f4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,64 +123,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Camada 2_0
+      name: POTE 5_0
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 519
+        width: 254
+        height: 407
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51e2a7efda8521a489229cdb0be39d90
+      internalID: 328072244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: POTE 5_1
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 506
+        width: 254
+        height: 407
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f4bd27d3080961438ae1a1b5d8df0aa
+      internalID: 597179385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: POTE 5_2
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 498
+        width: 254
+        height: 407
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 409d558a9de03934abe5052ba1f69a08
+      internalID: -1387329011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: POTE 5_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 69
-        height: 90
+        y: 29
+        width: 254
+        height: 407
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ae0eab9105606446ba0d9f29c72cc69
-      internalID: -29522287
+      spriteID: 1fb2476c011dbd14bab073006c76189a
+      internalID: -535577668
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Camada 2_1
+      name: POTE 5_4
       rect:
         serializedVersion: 2
-        x: 114
-        y: 0
-        width: 63
-        height: 91
+        x: 601
+        y: 46
+        width: 254
+        height: 407
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03b6d66b6eb95e648b3385a8748af23b
-      internalID: -1243136087
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Camada 2_2
-      rect:
-        serializedVersion: 2
-        x: 203
-        y: 1
-        width: 68
-        height: 89
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ce5779f1662232242a500501aed88188
-      internalID: 37580122
+      spriteID: 66c62949dc29eac41a3b75be50bdef89
+      internalID: -1238394005
       vertices: []
       indices: 
       edges: []
@@ -196,9 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Camada 2_0: -29522287
-      Camada 2_1: -1243136087
-      Camada 2_2: 37580122
+      POTE 5_0: 328072244
+      POTE 5_1: 597179385
+      POTE 5_2: -1387329011
+      POTE 5_3: -535577668
+      POTE 5_4: -1238394005
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
