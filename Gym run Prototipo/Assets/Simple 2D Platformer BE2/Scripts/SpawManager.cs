@@ -7,6 +7,8 @@ public class SpawnManager : MonoBehaviour
     float clock, cooldown = 2;
     [SerializeField]
     GameObject[] obstacle;
+    [SerializeField]
+    GameObject[] comida;
     public static SpawnManager instance;
     int ObstacleType;
 
@@ -20,25 +22,21 @@ public class SpawnManager : MonoBehaviour
     {
         if (clock <= 0)
         {
-            ObstacleType = Random.Range(0, 100);
+            ObstacleType = Random.Range(0, 5);
 
 
-            if (ObstacleType > 85)
+            if (ObstacleType > 1)
             {
-                Instantiate(obstacle[1], new Vector2(13, -1), Quaternion.identity);
+                 int i = Random.Range(0, obstacle.Length);
+                Instantiate(obstacle[i], obstacle[i].GetComponent<Obstacle>().Posicao, Quaternion.identity);
             } 
-            else if (ObstacleType > 60)
+            else
             {
-                Instantiate(obstacle[0], new Vector2(GameManager.instance.ScreenBounds.x, -4), Quaternion.identity);
+                Instantiate(comida[Random.Range(0, comida.Length)], new Vector2(13, -1), Quaternion.identity);
             }
 
-            else if(ObstacleType < 17)
-
-            {
-                Instantiate(obstacle[2], new Vector2(14, -3), Quaternion.identity);
-            }
-
-            if (GameManager.instance.Speed < 10)
+            
+                if (GameManager.instance.Speed < 10)
             {
                 GameManager.instance.Speed += 0.5f;
             }
