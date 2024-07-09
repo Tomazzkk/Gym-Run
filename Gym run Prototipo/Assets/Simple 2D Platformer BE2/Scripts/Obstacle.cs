@@ -6,8 +6,11 @@ public class Obstacle : MonoBehaviour
 {
     [SerializeField]
     Rigidbody2D rigidbody2D;
+    [SerializeField]
+    Vector2 posicao;
 
-    
+    public Vector2 Posicao { get => posicao; set => posicao = value; }
+
     void Update()
     {
         rigidbody2D.velocity = new Vector2(GameManager.instance.Speed * -1, 0);
