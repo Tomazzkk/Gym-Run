@@ -1470,8 +1470,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacle:
   - {fileID: 4085924126150786260, guid: 852d5c5fdb31f2245941b925be4c35ed, type: 3}
-  - {fileID: 2504692715351230495, guid: 43f8873cfe6b287458d5d997ddb97594, type: 3}
   - {fileID: 2845574742682794295, guid: 1fcbfa07e831a8644b73f784a5a986c5, type: 3}
+  comida:
+  - {fileID: 2504692715351230495, guid: d0388b2e55c964149a89b99125c1bce1, type: 3}
+  - {fileID: 2504692715351230495, guid: 43f8873cfe6b287458d5d997ddb97594, type: 3}
 --- !u!4 &1799136834
 Transform:
   m_ObjectHideFlags: 0
