@@ -1474,6 +1474,8 @@ MonoBehaviour:
   comida:
   - {fileID: 2504692715351230495, guid: d0388b2e55c964149a89b99125c1bce1, type: 3}
   - {fileID: 2504692715351230495, guid: 43f8873cfe6b287458d5d997ddb97594, type: 3}
+  comidaGordurosa:
+  - {fileID: 337827870603062988, guid: efae21f998703a748bd0e65d12110677, type: 3}
 --- !u!4 &1799136834
 Transform:
   m_ObjectHideFlags: 0

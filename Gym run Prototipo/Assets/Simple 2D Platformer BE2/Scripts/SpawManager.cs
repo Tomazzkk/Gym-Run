@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
@@ -11,7 +12,8 @@ public class SpawnManager : MonoBehaviour
     GameObject[] comida;
     public static SpawnManager instance;
     int ObstacleType;
-
+    [SerializeField] GameObject[] comidaGordurosa;
+    
     private void Awake()
     {
         instance = this;
@@ -22,17 +24,21 @@ public class SpawnManager : MonoBehaviour
     {
         if (clock <= 0)
         {
-            ObstacleType = Random.Range(0, 5);
+            ObstacleType = Random.Range(0, 10);
 
 
-            if (ObstacleType > 1)
+            if (ObstacleType >= 7)
             {
                  int i = Random.Range(0, obstacle.Length);
                 Instantiate(obstacle[i], obstacle[i].GetComponent<Obstacle>().Posicao, Quaternion.identity);
             } 
-            else
+            else if(ObstacleType >= 4 && ObstacleType < 7)
             {
                 Instantiate(comida[Random.Range(0, comida.Length)], new Vector2(13, -1), Quaternion.identity);
+            }
+            else if (ObstacleType <= 4)
+            {
+                Instantiate(comidaGordurosa[Random.Range(0, comida.Length)], new Vector2(13, -1), Quaternion.identity);
             }
 
             
@@ -52,5 +58,8 @@ public class SpawnManager : MonoBehaviour
             clock -= Time.deltaTime;
         }
     }
-    
+    public void ComidaGordurosa()
+    {
+
+    }
 }

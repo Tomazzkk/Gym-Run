@@ -132,23 +132,25 @@ public class Player : MonoBehaviour
 
         }
         if(collision.gameObject.CompareTag("Obstaculo2"))
-        {
-            GameObject.Find("Image").GetComponent<Image>().fillAmount -= 0.02f;
-            ZeraBarra();
+        { 
            GameOver();
+        }
+        if (collision.gameObject.CompareTag("Gordurosa"))
+        {
+            GameObject.Find("Image").GetComponent<Image>().fillAmount -= 0.2f;
         }
 
            
   }
 
-    private void ZeraBarra()
-    {
-        if (GameObject.Find("Image").GetComponent<Image>().fillAmount == 0.0f)
-        {
-            GameOver();
+   // private void ZeraBarra()
+    //{
+      //  if (GameObject.Find("Image").GetComponent<Image>().fillAmount == 0.0f)
+        //{
+          //  GameOver();
             
-        }
-    }
+        //}
+    //}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
