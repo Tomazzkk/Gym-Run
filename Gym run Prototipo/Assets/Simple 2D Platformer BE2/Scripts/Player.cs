@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
         {
             Jump();
             jumping = true;
-            Pulando(true);
+            
         }
         if (Input.GetKeyUp(KeyCode.UpArrow))
         {
@@ -72,6 +72,7 @@ public class Player : MonoBehaviour
         if (onGround)
         {
             rigidbody2d.velocity = new Vector2(0, 8);
+            Pulando(true);
         }
 
     }

@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 7983753721465368932}
-  posicao: {x: 10, y: -4}
+  posicao: {x: 13, y: -4}
 --- !u!50 &7983753721465368932
 Rigidbody2D:
   serializedVersion: 4
