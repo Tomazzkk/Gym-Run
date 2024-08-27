@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: -7125719750680915007}
+  posicao: {x: 0, y: 0}
 --- !u!95 &4592092211760977981
 Animator:
   serializedVersion: 5

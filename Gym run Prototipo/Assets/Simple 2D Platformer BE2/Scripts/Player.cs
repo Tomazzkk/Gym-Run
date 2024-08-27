@@ -60,7 +60,10 @@ public class Player : MonoBehaviour
               
         }
 
-
+        if (GameObject.Find("Image").GetComponent<Image>().fillAmount == 0)
+        {
+            GameOver();
+        }
         
         
         }
@@ -137,20 +140,22 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Gordurosa"))
         {
-            GameObject.Find("Image").GetComponent<Image>().fillAmount -= 0.2f;
+            GameObject.Find("Image").GetComponent<Image>().fillAmount -= 0.04f;
+            Destroy(collision.gameObject);
+            
         }
 
            
   }
 
-   // private void ZeraBarra()
-    //{
-      //  if (GameObject.Find("Image").GetComponent<Image>().fillAmount == 0.0f)
-        //{
-          //  GameOver();
+    private void ZeraBarra()
+    {
+        if (GameObject.Find("Image").GetComponent<Image>().fillAmount == 0.0f)
+        {
+            GameOver();
             
-        //}
-    //}
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
