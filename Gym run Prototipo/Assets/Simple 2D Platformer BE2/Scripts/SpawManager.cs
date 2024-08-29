@@ -13,7 +13,11 @@ public class SpawnManager : MonoBehaviour
     public static SpawnManager instance;
     int ObstacleType;
     [SerializeField] GameObject[] comidaGordurosa;
-    
+
+    int alturaSpawn;
+    Vector2 posicaoObstacle; 
+
+
     private void Awake()
     {
         instance = this;
@@ -22,6 +26,14 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       SpawmObstaculos();
+    }
+    public void SpawmObstaculos()
+    {
+        alturaSpawn = Random.Range(0, -4);
+        
+
+
         if (clock <= 0)
         {
             ObstacleType = Random.Range(0, 10);
@@ -30,15 +42,16 @@ public class SpawnManager : MonoBehaviour
             if (ObstacleType >= 7)
             {
                  int i = Random.Range(0, obstacle.Length);
-                Instantiate(obstacle[i], obstacle[i].GetComponent<Obstacle>().Posicao, Quaternion.identity);
+                Instantiate(obstacle[i], obstacle[i].GetComponent<Obstacle>().Posicao,Quaternion.identity);
+                // Instantiate(obstacle[i], obstacle[i].GetComponent<Obstacle>().Posicao, Quaternion.identity);
             } 
             else if(ObstacleType >= 4 && ObstacleType < 7)
             {
-                Instantiate(comida[Random.Range(0, comida.Length)], new Vector2(13, -1), Quaternion.identity);
+                Instantiate(comida[Random.Range(0, comida.Length)], new Vector2(13, alturaSpawn), Quaternion.identity);
             }
             else if (ObstacleType <= 4)
             {
-                Instantiate(comidaGordurosa[Random.Range(0, comida.Length)], new Vector2(13, -1), Quaternion.identity);
+                Instantiate(comidaGordurosa[Random.Range(0, comida.Length)], new Vector2(13, alturaSpawn), Quaternion.identity);
             }
 
             
@@ -57,9 +70,5 @@ public class SpawnManager : MonoBehaviour
         {
             clock -= Time.deltaTime;
         }
-    }
-    public void ComidaGordurosa()
-    {
-
     }
 }
