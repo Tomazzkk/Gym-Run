@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2946366726187045847}
   - component: {fileID: 3068892441737344892}
   - component: {fileID: -7748623683010315888}
-  - component: {fileID: -4077794006948650551}
+  - component: {fileID: 6803751513228740268}
   m_Layer: 0
   m_Name: Banana2
   m_TagString: Obstaculo2
@@ -150,8 +150,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!58 &-4077794006948650551
-CircleCollider2D:
+--- !u!61 &6803751513228740268
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -182,6 +182,16 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.0204142}
+  m_Offset: {x: 0.048953533, y: -0.30024463}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10, y: 9.62}
+    newSize: {x: 10, y: 9.62}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 2.9915392
+  m_Size: {x: 8.531415, y: 2.0747333}
+  m_EdgeRadius: 0
