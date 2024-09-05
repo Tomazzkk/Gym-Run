@@ -21,8 +21,8 @@ public class GameManager : MonoBehaviour
 
         //screenVounds = A ( ) + B( C( ) )
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z)) + new Vector3(1, 0, 0);
+        Time.timeScale = 1.0f;
 
-        
     }
 
 
