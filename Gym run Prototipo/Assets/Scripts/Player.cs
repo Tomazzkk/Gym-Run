@@ -64,9 +64,21 @@ public class Player : MonoBehaviour
         {
             GameOver();
         }
-        
-        
+
+        CorrendoMagro();
+
+
+
         }
+
+    public void CorrendoMagro()
+    {
+        if(GameObject.Find("Image").GetComponent<Image>().fillAmount >= 0.6f)
+        {
+            animator.SetBool("Correr Magro", true);
+        }
+       
+    }
        
 
  
@@ -127,7 +139,7 @@ public class Player : MonoBehaviour
         {
             scoreText += 1;
             textMeshProUGUI.text = scoreText.ToString();
-           GameObject.Find("Image").GetComponent<Image>().fillAmount += 0.05f;
+           GameObject.Find("Image").GetComponent<Image>().fillAmount += 0.6f;
             if (GameObject.Find("Image").GetComponent<Image>().fillAmount >= 1f )
             {
                 imune = true;
@@ -179,12 +191,12 @@ public class Player : MonoBehaviour
     {
         if (agachado == true) 
         {
-            GetComponent<BoxCollider2D>().size = new Vector2(0.60f, 0.65f);
+            GetComponent<CapsuleCollider2D>().size = new Vector2(0.60f, 0.65f);
         }
 
         else
         {
-            GetComponent<BoxCollider2D>().size = new Vector2(0.60f, 0.86f);
+            GetComponent<CapsuleCollider2D>().size = new Vector2(0.60f, 0.86f);
         }
         animator.SetBool("Agachado", agachado);
     }
