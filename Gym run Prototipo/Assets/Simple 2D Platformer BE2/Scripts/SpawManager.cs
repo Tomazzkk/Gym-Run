@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
@@ -51,7 +50,7 @@ public class SpawnManager : MonoBehaviour
             }
             else if (ObstacleType <= 4)
             {
-                Instantiate(comidaGordurosa[Random.Range(0, comida.Length)], new Vector2(13, alturaSpawn), Quaternion.identity);
+                Instantiate(comidaGordurosa[Random.Range(0, comidaGordurosa.Length)], new Vector2(13, alturaSpawn), Quaternion.identity);
             }
 
             
