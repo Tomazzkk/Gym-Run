@@ -13,7 +13,7 @@ public class SpawnManager : MonoBehaviour
     int ObstacleType;
     [SerializeField] GameObject[] comidaGordurosa;
 
-    int alturaSpawn;
+    float alturaSpawn;
     Vector2 posicaoObstacle; 
 
 
@@ -29,7 +29,7 @@ public class SpawnManager : MonoBehaviour
     }
     public void SpawmObstaculos()
     {
-        alturaSpawn = Random.Range(0, -4);
+        alturaSpawn = Random.Range(-1.5f, -4.295f);
         
 
 
