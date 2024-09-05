@@ -127,7 +127,7 @@ public class Player : MonoBehaviour
         {
             scoreText += 1;
             textMeshProUGUI.text = scoreText.ToString();
-           GameObject.Find("Image").GetComponent<Image>().fillAmount += 0.02f;
+           GameObject.Find("Image").GetComponent<Image>().fillAmount += 0.05f;
             if (GameObject.Find("Image").GetComponent<Image>().fillAmount >= 1f )
             {
                 imune = true;
