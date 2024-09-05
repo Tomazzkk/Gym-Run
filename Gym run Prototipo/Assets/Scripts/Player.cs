@@ -75,7 +75,12 @@ public class Player : MonoBehaviour
     {
         if(GameObject.Find("Image").GetComponent<Image>().fillAmount >= 0.6f)
         {
+
             animator.SetBool("Correr Magro", true);
+        }
+        else if(GameObject.Find("Image").GetComponent<Image>().fillAmount >= 0.3f)
+        {
+            animator.SetBool("Correr Magro", false);
         }
        
     }
@@ -139,7 +144,7 @@ public class Player : MonoBehaviour
         {
             scoreText += 1;
             textMeshProUGUI.text = scoreText.ToString();
-           GameObject.Find("Image").GetComponent<Image>().fillAmount += 0.6f;
+           GameObject.Find("Image").GetComponent<Image>().fillAmount += 0.4f;
             if (GameObject.Find("Image").GetComponent<Image>().fillAmount >= 1f )
             {
                 imune = true;
@@ -153,7 +158,7 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Gordurosa"))
         {
-            GameObject.Find("Image").GetComponent<Image>().fillAmount -= 0.04f;
+            GameObject.Find("Image").GetComponent<Image>().fillAmount -= 0.3f;
             Destroy(collision.gameObject);
             
         }
