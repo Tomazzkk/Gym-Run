@@ -50,6 +50,7 @@ public class Player : MonoBehaviour
             Agachado(false) ;
         }
 
+
         if (imune == true)
 
         { Tempo += Time.deltaTime; 
@@ -71,6 +72,7 @@ public class Player : MonoBehaviour
 
         }
 
+  
     public void CorrendoMagro()
     {
         if(GameObject.Find("Image").GetComponent<Image>().fillAmount >= 0.6f)
@@ -87,7 +89,7 @@ public class Player : MonoBehaviour
        
 
  
-    private void Jump()
+    public void Jump()
     {
         if (onGround)
         {
@@ -99,14 +101,7 @@ public class Player : MonoBehaviour
 
 
 
-    private void CheckGround()
-    {
-        onGround = Physics2D.OverlapCircle(transform.position, 0.2f, groundMask);
-        if (onGround)
-        {
-            doubleJump = true;
-        }
-    }
+   
     
     private void UpdateGravity()
     {
@@ -166,14 +161,6 @@ public class Player : MonoBehaviour
            
   }
 
-    private void ZeraBarra()
-    {
-        if (GameObject.Find("Image").GetComponent<Image>().fillAmount == 0.0f)
-        {
-            GameOver();
-            
-        }
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -192,7 +179,7 @@ public class Player : MonoBehaviour
     }
 
 
-    private void Agachado(bool agachado)
+    public void Agachado(bool agachado)
     {
         if (agachado == true) 
         {
@@ -211,6 +198,31 @@ public class Player : MonoBehaviour
         animator.SetBool("Pulando", pulando);
     }
 
+    public void PularButton()
+    {
 
-  
+            Jump();
+            jumping = true;
+
+
+    }
+
+    public void DPularButton()
+    {
+
+
+            jumping = false;
+            Pulando(false);
+        
+
+    }
+
+    public void AgachadoButton()
+    {
+       Agachado(true); 
+    }
+    public void DagachadoButton()
+    {
+        Agachado(false);
+    }
 }   
