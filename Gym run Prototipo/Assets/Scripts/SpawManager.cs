@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    float clock, cooldown = 5;
+    float clock, cooldown = 2;
     [SerializeField]
     GameObject[] obstacle;
     [SerializeField]
