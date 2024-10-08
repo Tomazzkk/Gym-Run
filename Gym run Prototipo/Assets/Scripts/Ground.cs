@@ -12,6 +12,6 @@ public class Ground : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Texture.mainTextureOffset = Texture.mainTextureOffset + new Vector2(speedSky * Time.deltaTime, 0);
+        Texture.mainTextureOffset = Texture.mainTextureOffset + new Vector2(speedSky * GameManager.instance.GameSpeed, 0);
     }
 }

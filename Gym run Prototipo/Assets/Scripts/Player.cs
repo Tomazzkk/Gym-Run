@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
 
         if (imune == true)
 
-        { Tempo += Time.deltaTime; 
+        { Tempo += GameManager.instance.GameSpeed; 
             if(Tempo >= 5)
             { imune = false;
                 Tempo = 0;
@@ -107,11 +107,11 @@ public class Player : MonoBehaviour
     {
         if (rigidbody2d.velocity.y > 0 && !jumping)
         {
-            rigidbody2d.velocity += Physics2D.gravity * lowJumpMultiplier * Time.deltaTime;
+            rigidbody2d.velocity += Physics2D.gravity * lowJumpMultiplier * GameManager.instance.GameSpeed;
         }
         else if (rigidbody2d.velocity.y < 0)
         {
-            rigidbody2d.velocity = rigidbody2d.velocity + (Physics2D.gravity * fallMultiplier) * Time.deltaTime;
+            rigidbody2d.velocity = rigidbody2d.velocity + (Physics2D.gravity * fallMultiplier) * GameManager.instance.GameSpeed;
         }
     }
 
@@ -121,7 +121,7 @@ public class Player : MonoBehaviour
     }
     void GameOver()
     {
-        Time.timeScale = 0;
+        GameManager.instance.ScaleTime = 0;
         GamerOverPanel.SetActive(true);
         GameOverTransp.SetActive(true);
 

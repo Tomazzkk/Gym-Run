@@ -13,8 +13,8 @@ public class Obstacle : MonoBehaviour
 
     void Update()
     {
-        rigidbody2D.velocity = new Vector2(GameManager.instance.Speed * -1, 0);
-        rigidbody2D.velocity = new Vector2(GameManager.instance.Speed * -1, 0);
+     
+        rigidbody2D.velocity = new Vector2(GameManager.instance.Speed * -1* GameManager.instance.GameSpeed, 0);
 
         if (transform.position.x < -GameManager.instance.ScreenBounds.x)
         {
