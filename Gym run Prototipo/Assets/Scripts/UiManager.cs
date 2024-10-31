@@ -11,6 +11,7 @@ public class UiManager : MonoBehaviour
     float timer;
     [SerializeField] TextMeshProUGUI contagemText;
 
+
     private void Update()
     {
 
