@@ -18,8 +18,10 @@ public class Player : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] GameObject GamerOverPanel;
     [SerializeField] GameObject GameOverTransp;
+    [SerializeField] int pontuacaoFinalText;
     int scoreText;
-    [SerializeField] TextMeshProUGUI textMeshProUGUI;
+    [SerializeField] TextMeshProUGUI scoreTextMeshProUGUI;
+    [SerializeField] TextMeshProUGUI finalScoreTextMeshProUGUI;
     float Tempo;
 
 
@@ -67,10 +69,18 @@ public class Player : MonoBehaviour
         }
 
         CorrendoMagro();
+        DefinirPontuaçãoFinal();
 
 
 
         }
+
+    public void DefinirPontuaçãoFinal()
+    {
+        pontuacaoFinalText = scoreText;
+        finalScoreTextMeshProUGUI.text = pontuacaoFinalText.ToString();
+        
+    }
 
   
     public void CorrendoMagro()
@@ -138,7 +148,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("maca"))
         {
             scoreText += 1;
-            textMeshProUGUI.text = scoreText.ToString();
+            scoreTextMeshProUGUI.text = scoreText.ToString();
            GameObject.Find("Image").GetComponent<Image>().fillAmount += 0.4f;
             if (GameObject.Find("Image").GetComponent<Image>().fillAmount >= 1f )
             {

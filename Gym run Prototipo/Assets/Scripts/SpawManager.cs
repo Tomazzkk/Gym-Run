@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    float clock, cooldown = 10;
+    float clock, cooldown = 3;
     [SerializeField]
     GameObject[] obstacle;
     [SerializeField]
@@ -29,7 +29,7 @@ public class SpawnManager : MonoBehaviour
     }
     public void SpawmObstaculos()
     {
-        alturaSpawn = Random.Range(-1.5f, -4.295f);
+        alturaSpawn = Random.Range(-1.5f, -4.03f);
         
 
 
