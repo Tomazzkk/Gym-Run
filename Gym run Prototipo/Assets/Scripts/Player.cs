@@ -96,6 +96,14 @@ public class Player : MonoBehaviour
         }
        
     }
+
+    public void OlhandoGordo()
+    {
+        if(GameObject.Find("Image").GetComponent<Image>().fillAmount >= 0.5)
+        {
+            animator.SetBool("olhandoPcima", true);
+        }
+    }
        
 
  
@@ -149,7 +157,7 @@ public class Player : MonoBehaviour
         {
             scoreText += 1;
             scoreTextMeshProUGUI.text = scoreText.ToString();
-           GameObject.Find("Image").GetComponent<Image>().fillAmount += 0.4f;
+           GameObject.Find("Image").GetComponent<Image>().fillAmount += 0.05f;
             if (GameObject.Find("Image").GetComponent<Image>().fillAmount >= 1f )
             {
                 imune = true;
@@ -163,7 +171,7 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Gordurosa"))
         {
-            GameObject.Find("Image").GetComponent<Image>().fillAmount -= 0.3f;
+            GameObject.Find("Image").GetComponent<Image>().fillAmount -= 0.03f;
             Destroy(collision.gameObject);
             
         }
